@@ -1,6 +1,10 @@
 language: java
 jdk: oraclejdk8
 
+notifications:
+  slack:
+    on_success: always
+
 cache:
   directories:
     - $HOME/.m2
