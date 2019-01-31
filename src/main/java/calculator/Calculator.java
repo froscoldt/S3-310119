@@ -20,7 +20,7 @@ public class Calculator implements ICalculator {
     
     @Override
     public int mul(int n1, int n2) {
-        return n1*n2+2;
+        return n1*n2+2+2+2;
     }
 
     @Override
