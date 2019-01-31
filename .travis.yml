@@ -2,9 +2,12 @@ language: java
 jdk: oraclejdk8
 
 notifications:
-  slack:
-    on_success: always
-
+  email:
+    recipients:
+      - mark.d.denner@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
+    
 cache:
   directories:
     - $HOME/.m2
