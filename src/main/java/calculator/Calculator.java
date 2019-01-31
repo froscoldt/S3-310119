@@ -14,12 +14,12 @@ public class Calculator implements ICalculator {
     
     @Override
     public int sub(int n1, int n2) {
-        return n1-n2;
+        return n1-n2+2;
     }
 
     @Override
     public int mul(int n1, int n2) {
-        return n1*n2+1;
+        return n1*n2;
     }
 
     @Override
