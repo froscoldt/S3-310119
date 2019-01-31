@@ -3,8 +3,10 @@ jdk: oraclejdk8
 
 notifications:
   email:
-    on_success: always # default: change
-    on_failure: always # default: always
+  recipients:
+      - mark.d.denner@gmail.com
+    on_success: always
+    on_failure: always
     
 cache:
   directories:
