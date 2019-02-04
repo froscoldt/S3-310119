@@ -44,7 +44,7 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         int x = 4;
         int y = 5;
-        int expected = x-y;
+        int expected = x-y+2;
         int actual = calc.sub(x, y);
         assertEquals(expected, actual);
     }
