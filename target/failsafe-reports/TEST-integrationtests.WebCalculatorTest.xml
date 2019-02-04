@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="integrationtests.WebCalculatorTest" time="0.789" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="integrationtests.WebCalculatorTest" time="0.938" errors="0" skipped="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -58,7 +58,7 @@
     <property name="common.loader" value="${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar"/>
     <property name="maven.home" value="C:\Program Files\apache-maven-3.6.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher verify"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify -Ptest"/>
     <property name="java.class.path" value="C:/Program Files/apache-maven-3.6.0/boot/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.vm.specification.version" value="1.8"/>
@@ -80,8 +80,8 @@
     <property name="tomcat.maven.http.port" value="7777"/>
     <property name="java.specification.version" value="1.8"/>
   </properties>
-  <testcase classname="integrationtests.WebCalculatorTest" name="addWebTest" time="0.748"/>
-  <testcase classname="integrationtests.WebCalculatorTest" name="divWebTest" time="0.025"/>
-  <testcase classname="integrationtests.WebCalculatorTest" name="subWebTest" time="0.007"/>
-  <testcase classname="integrationtests.WebCalculatorTest" name="mulWebTest" time="0.009"/>
+  <testcase classname="integrationtests.WebCalculatorTest" name="addWebTest" time="0.922"/>
+  <testcase classname="integrationtests.WebCalculatorTest" name="divWebTest" time="0"/>
+  <testcase classname="integrationtests.WebCalculatorTest" name="subWebTest" time="0"/>
+  <testcase classname="integrationtests.WebCalculatorTest" name="mulWebTest" time="0.016"/>
 </testsuite>

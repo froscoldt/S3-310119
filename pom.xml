@@ -8,6 +8,18 @@
     <packaging>war</packaging>
 
     <name>WebApplication</name>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <show>public</show>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -110,36 +122,85 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>  
-                <groupId>org.apache.tomcat.maven</groupId>  
-                <artifactId>tomcat7-maven-plugin</artifactId>  
-                <version>2.2</version>  
-                <configuration>  
-                    <path>/</path>
-                    <port>7777</port>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>start-tomcat</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <fork>true</fork>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>stop-tomcat</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>shutdown</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
-
+    
+    <profiles>
+        <profile>
+            <id>test</id>
+            <build>
+                <plugins>
+                    <plugin>  
+                        <groupId>org.apache.tomcat.maven</groupId>  
+                        <artifactId>tomcat7-maven-plugin</artifactId>  
+                        <version>2.2</version>  
+                        <configuration>  
+                            <path>/</path>
+                            <port>7777</port>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>start-tomcat</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <fork>true</fork>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>stop-tomcat</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>shutdown</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>deploylocal</id>
+            <build>
+                <plugins>
+                    <plugin>  
+                        <groupId>org.apache.tomcat.maven</groupId>  
+                        <artifactId>tomcat7-maven-plugin</artifactId>  
+                        <version>2.2</version>  
+                        <configuration>
+                            <url>http://localhost:8084/manager/text</url>  
+                            <server>TomcatServer</server>
+                            <path>/</path>
+                            <username>ide</username>
+                            <password>D0Pg1WL1</password>
+                            <update>true</update>
+                        </configuration>  
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>deployremote</id>
+            <build>
+                <plugins>
+                    <plugin>  
+                        <groupId>org.apache.tomcat.maven</groupId>  
+                        <artifactId>tomcat7-maven-plugin</artifactId>  
+                        <version>2.2</version>  
+                        <configuration>
+                            <url>http://138.197.185.156:8080/manager/text</url>  
+                            <server>TomcatServer</server>
+                            <path>/Webcalculator</path>
+                            <username>mark</username>
+                            <password>GQKgNgFMzkw8MFmT</password>
+                            <update>true</update>
+                        </configuration>  
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+      
+    </profiles>
 </project>
