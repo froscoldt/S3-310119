@@ -13,4 +13,4 @@ cache:
     - $HOME/.m2
 
 script:
-  mvn verify
+  mvn verify -Ptest
